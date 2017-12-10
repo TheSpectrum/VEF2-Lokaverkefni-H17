@@ -1,253 +1,41 @@
 <!DOCTYPE html>
+<p class="gif" style="position: fixed; float: left; margin-left: -250px">
+      <img src="ad.gif" alt="">
+    </p>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <title>Lokaverkefni</title>
+    <title>Learning Github</title>
     <meta name="description" content="Github for Web Designers">
     <link rel="stylesheet" href="main.css">
   </head>
+
   <body>
     <header>
-     <h1> <a href="index.html" title="home"></span>Spectrum's Game</a></h1>
+     <h1> <a href="index.html" title="home"> Sectrum's Home</a></h1>
     </header>
     <nav id="pageNav" role="navigation" class="cf">
       <ul>
-        <li><a href="index.html" title="heimasida">Heimasiða</a></li>
-        <li><a href="leikur.html" title="leikur" class="current">Leikur</a>
+        <li><a href="index.html" title="concepts" class="current">Heimasíða</a></li>
+        <li><a href="leikur.html" title="leikur">Leikur</a></li>
         <li><a href="plan.html" title="plan">Plön</a></li>
-        <li><a href="contact.html" title="samband">Hafa Samband</a></li>
+        <li><a href="contact.html" title="contact">Hafa samband</a></li>
       </ul>
     </nav>
+    
     <main>
-    <p class="gif" style="position: fixed; float: left; margin-left: -250px">
-      <img src="ad.gif" alt="">
+    <h2>Nagdýraleikur</h2>
+    <p>Þetta er lokaverkefni í forritun(FORR2FA05BU),leikurinn er byggður á Python 3.6
     </p>
-    <p class="gif" style="    position:fixed;
-     top: 0;
-     left: 0;
-     width: 100%;">
-      <img src="ad.gif" alt="">
-    </p>
-    <h2>Hér er kóðinn af leiknum</h2>
-    <p>
-        # Arkadiusz Lubelski 140697-3119
-        <br>
-# 14/11/2017
-        <br>
-
-
-val = -1
-        <br>
-kastTeljari = 0
-        <br>
-rottahreyfing = 0
-        <br>
-rottuTeljari = 0
-        <br>
-hamstraTeljari = 0
-        <br>
-hamstraRottuTeljari = 0
-        <br>
-musjafntefli = 0
-        <br>
-import random
-        <br>
-                <br>
-
-# Litir af texta        <br>
-def Red():  # RED        <br>
-    return "\033[1;31;0m"        <br>        <br>
-def Green(): #GREEN        <br>
-    return "\033[1;32;0m"        <br>        <br>
-def White():        <br>
-    return "\033[1;37;0m"        <br>        <br>
-def Magneta():        <br>
-    return "\033[1;35;0m"        <br>
-        <br>        <br>
-#Bakgrunnur        <br>
-def YellowGb():        <br>
-    return "\033[1;43;0m"        <br>        <br>
-def ResetBG():        <br>
-    return "\033[1;49;0m"        <br>
-        <br>        <br>
-# Klasi fyrir dýrin        <br>
-class KlasiDyr:        <br>
-    def __init__(self,tegund,DMG,stada):        <br>
-        self.tegund = tegund        <br>
-        self.DMG = DMG        <br>
-        self.stada = stada        <br>
-        <br>        <br>
-# Mús Hamstrar og Rottur        <br>
-mus = KlasiDyr("mús", random.randrange(2, 7, 2), 1)        <br>
-hamstur = KlasiDyr("hamstur", random.randrange(2, 7, 2), random.randint(15,95))        <br>
-hamstur2 = KlasiDyr("hamstur", random.randrange(2, 7, 2), random.randint(15,95))        <br>
-rotta = KlasiDyr("rotta", random.randrange(2, 7, 2),  random.randint(15,95))        <br>
-rotta2= KlasiDyr("rotta", random.randrange(2, 7, 2), random.randint(15,95))        <br>
-rotta3 = KlasiDyr("rotta", random.randrange(2, 7, 2), random.randint(15,95))        <br>
-print()        <br>
-# Leikurinn        <br>
-while mus.stada < 100:        <br>
-    # Rottan getur bakkað og farið áfram        <br>
-    rottahreyfing = random.randint(1,3)        <br>
-        <br>        <br>
-    kastTeljari += 1        <br>
-    White()        <br>
-    kast = random.randint(1,6)        <br>
-    rottahreyfing =random.randint(1,2)        <br>
-    mus.stada += kast        <br>
-    print(Magneta(), "[System] Turn nr:",kastTeljari)        <br>
-    print("")        <br>
-        <br>        <br>
-    # Ef rottan og músinn eru á sama stað        <br>
-    if mus.stada == rotta.stada:        <br>
-        <br>        <br>
-        # Músinn og rotta Jafntefli        <br>
-        if mus.DMG == rotta.DMG:        <br>
-            rottuTeljari += 1        <br>
-            musjafntefli = (mus.DMG/2)        <br>
-            mus.stada + musjafntefli        <br>
-            print(Magneta(), "[Mús]", White(), "Einhvern meginn ég slapp frá",Red(), "Rottuni" ,White(),"og komst um", musjafntefli ,"reiti í burtu")        <br>
-        <br>        <br>
-        # Músinn vinnur        <br>
-        elif mus.DMG > rotta.DMG:        <br>
-            rottuTeljari += 1        <br>
-            mus.stada + mus.DMG        <br>
-            print(Magneta(), "[Mús]", White(), "Úff, lifði af í þetta skipti, og náði að komast frá",Red(),"Rottuni",White(),"um",mus.DMG,"reiti")        <br>
-        <br>        <br>
-        # Músinn tapar        <br>
-        elif mus.DMG < rotta.DMG:        <br>
-            rottuTeljari += 1        <br>
-            mus.stada - rotta.DMG        <br>
-            print(Magneta(), "[Mús]", Red(), "Rottan", White(), "vann, ég fluði um", rotta.DMG,"reiti, ég vona að þetta sé nóg")        <br>
-        <br>        <br>
-          #  print(Magneta(), "[Mús]", White(), "Ég hitti ekki rottu í dag, það er gott :)")        <br>
-        <br>        <br>
-    # Ef músinn hittir Hamstrinn        <br>
-    elif mus.stada == hamstur.stada:        <br>
-        hamstraTeljari += 1        <br>
-        mus.stada = mus.stada + hamstur.DMG        <br>
-        print(Magneta(), "[Mús]", White(), "Hamstur kom til að hjálpa, ég komst um", hamstur.DMG, "reiti áfram :)")        <br>
-        <br>        <br>
-    # Ef hamsturinn hittir rottu        <br>
-    elif hamstur.stada == rotta.stada:        <br>
-        hamstraRottuTeljari +=1        <br>
-        <br>        <br>
-        if hamstur.DMG > rotta.DMG:        <br>
-            hamstur.stada - (rotta.DMG/2)        <br>
-            print(Magneta(), "[Hamstur]", Green(), "Ég var heppinn í þetta skipti, ég þarf að komast að", White(), "Músinni" )        <br>
-        <br>        <br>
-        elif hamstur.DMG < rotta.DMG:        <br>
-            hamstur.stada + (rotta.DMG/2)        <br>
-            print(Magneta(), "[Hamstur]", Green(), "Ég var heppinn í þetta skipti, ég þarf að komast að", White(), "Músinni")        <br>
-        <br>        <br>
-        elif hamstur.DMG == rotta.DMG:        <br>
-            print(Magneta(), "[Hamstur]", Green(), "Einhvern meginn ég slapp frá", Red(), "Rottuni", Green(), "og komst um",(hamstur.DMG/2), "reiti í burtu")        <br>
-        <br>        <br>
-    # Þegar músinn er kominn lengra en hamsturinn        <br>
-    # hann reynir að komast að musinni        <br>
-    elif hamstur.stada < mus.stada:        <br>
-        hamstur.stada = hamstur.stada + random.randint(1,6)        <br>
-        print(Magneta(), "[Hamstur]", Green(), "Engin", Red(), "rotta", Green(),"á leiðinni, þarf að komast að", White(), "músinni")        <br>
-        <br>        <br>
-    # Annars ef hamsturinn er kominn á undan músinni        <br>
-    # þá bakkar hann til að ná henni        <br>
-    elif hamstur.stada > mus.stada:        <br>
-        hamstur.stada = hamstur.stada - random.randint(1,6)        <br>
-        print(Magneta(), "[Hamstur]", Green(), "Engin", Red(), "rotta", Green(), "á leiðinni, þarf að komast að",White(), "músinni")        <br>
-        <br>        <br>
-    # Ef í random kemur 1 þá rottan bakkar        <br>
-    elif rottahreyfing == 1:        <br>
-        rotta.stada = rotta.stada - random.randint(1, 6)        <br>
-        if rotta.stada == hamstur.stada:        <br>
-            if hamstur.DMG < rotta.DMG:        <br>
-                hamstur.stada - (rotta.DMG / 2)        <br>
-                print(Magneta(), "[Rotta]", Red(), "Ha! Ég vann,", Green(), "hamsturinn", Red(), "sleppur ekki næst")        <br>
-        <br>        <br>
-            elif hamstur.DMG > rotta.DMG:        <br>
-                hamstur.stada + (rotta.DMG / 2)        <br>
-                print(Magneta(), "[Rotta]", Red(), "Ég mun vinna næst!")        <br>
-        <br>        <br>
-            elif hamstur.DMG == rotta.DMG:        <br>
-                hamstur.stada -(hamstur.DMG/2)        <br>
-                print(Magneta(),"[Rotta]", Red(), "Hann sleppur ekki frá mér næst!")        <br>
-        <br>        <br>
-        elif rotta.stada == mus.stada:        <br>
-            if mus.DMG < rotta.DMG:        <br>
-                mus.stada - (rotta.DMG / 2)        <br>
-                print(Magneta(), "[Rotta]", Red(), "Ha! Ég vann,", White(), "músinn", Red(), "sleppur ekki næst")        <br>
-        <br>        <br>
-            elif mus.DMG > rotta.DMG:        <br>
-                mus.stada + (rotta.DMG / 2)        <br>
-                print(Magneta(), "[Rotta]", Red(), "Ég mun vinna næst!")        <br>
-        <br>        <br>
-            elif mus.DMG == rotta.DMG:        <br>
-                mus.stada -(mus.DMG/2)        <br>
-                print(Magneta(), "[Rotta]", Red(), "Hann sleppur ekki frá mér næst!")        <br>
-        else:        <br>
-            print(Magneta(), "[Rotta]", Red(), "Éf verð að finna músina")        <br>
-        <br>        <br>
-    # Ef í random kemur 2 þá rottan fer áfram        <br>
-    elif rottahreyfing == 2:        <br>
-        rotta.stada = rotta.stada- random.randint(1,6)        <br>
-        <br>        <br>
-        if rotta.stada == hamstur.stada:        <br>
-            if hamstur.DMG < rotta.DMG:        <br>
-                hamstur.stada - (rotta.DMG / 2)        <br>
-                print(Magneta(), "[Rotta]", Red(), "Ha! Ég vann,", Green(), "hamsturinn", Red(),"sleppur ekki næst")        <br>
-        <br>        <br>
-            elif hamstur.DMG > rotta.DMG:        <br>
-                hamstur.stada + (rotta.DMG / 2)        <br>
-                print(Magneta(),"[Rotta]", Red(), "Ég mun vinna næst!")        <br>
-            else:        <br>
-                print(Magneta(), "[Rotta]", Red(), "Éf verð að finna músina")        <br>
-        <br>        <br>
-        elif rotta.stada == mus.stada:        <br>
-            if mus.DMG < rotta.DMG:        <br>
-                mus.stada - (rotta.DMG / 2)        <br>
-                print(Magneta(), "[Rotta]", Red(), "Ha! Ég vann,", White(), "músinn", Red(),"sleppur ekki næst")        <br>
-        <br>        <br>
-            elif mus.DMG > rotta.DMG:        <br>
-                mus.stada + (rotta.DMG / 2)        <br>
-                print(Magneta(),"[Rotta]", Red(), "Ég mun vinna næst!")        <br>
-        <br>
-        <br>
-        <br>
-        else:        <br>
-            print(Magneta(), "[Rotta]", Red(), "Éf verð að finna músina")        <br>
-        <br>
-        <br>
-        <br>
-# Hér er allur leikurinn útprentaður        <br>
-    print(Magneta(), "------[Turn", kastTeljari, "búinn]------")        <br>
-    print("")        <br>
-    print("")        <br>
-    print(White(), "---[Mús]---")        <br>
-    print(White(), "Ég kommst á reit", mus.stada)        <br>
-    print(White(), "Ég hitti", rottuTeljari, "rottur hingað til")        <br>
-    print(White(), "Ég hitti", hamstraTeljari, "hamstra hingað til")        <br>
-    print("")        <br>
-    print("")        <br>
-    print(Green(), "---[Hamstur---]")        <br>
-    print(Green(), "Ég er kominn á reit", hamstur.stada,"ég er á leiðinni að músinni")        <br>
-    print(Green(), "Ég barðist við",hamstraRottuTeljari,"rottur hingað til, sjáum til hvað kemur næst")        <br>
-    print(Green(), "Ég hitti músina",hamstraTeljari,"sinnum hingað til")        <br>
-    print("")        <br>
-    print("")        <br>
-    print(Magneta(),"[System] Næsti Turn byrjar")        <br>
-    print("")        <br>
-    print("")        <br>
-if mus.stada >= 100:        <br>
-    print(Magneta(), "\ \----[Leikurinn er buinn]----/ /")        <br>
-    print(White(), "Músinn", Magneta(), "Vann, það tók henni", kastTeljari, "köst")        <br>
-    print(Red(), "Rottur", Magneta(), "og", Green(), "Hamstrar", Magneta(), "börðust", hamstraRottuTeljari, "sinnum")        <br>
-    print(White(), "Músinn", Magneta(), "hitti", Red(), "Rottu", Magneta(), rottuTeljari, "sinnum")        <br>
-    print(Green(), "Hamsturinn", Magneta(), "hjálpaði", White(), "músinni", Magneta(), hamstraTeljari, "sinnum")        <br>
-        <br>
-
-    </p></main>
+    <dl>
+    </dl>
+    <h4>Maður þarf að plana þetta vel</h4>
+    </main>
     <footer>
-        <p class="license">Github for Web Designers</span> by James Williamson</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="img"><br><img alt="Creative Commons License" src="88x31.png"></a></p>
+      <p class="license">Github for Web Designers</span> by James Williamson</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" class="img"><br><img alt="Creative Commons License" src="88x31.png"></a></p>
     </footer>
-</body></html>
+</body>
+</html>
+<!-- --->
